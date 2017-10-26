@@ -3,7 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-var ObjectId = require('mongodb').ObjectID;
+
 
 const app = express()
 app.use(bodyParser.json())
@@ -40,10 +40,21 @@ app.get('/list/:firstName', (req, res) => {
         res.redirect('/list')
       })
   })
-  //this method actualize one object from the collection
-  app.put('/updateInfo/:id', (req, res) => {
-    var userToUpdate = req.params.id
-    db.collection('providers').updateOne({ _id: ObjectId(userToUpdate)},req.body, (err, result) => {
+  //this method actualize the first object from the collection that match with the name
+  app.put('/updateInfo/:firstName', (req, res) => {
+    var userToUpdate = req.params.firstName
+    db.collection('providers').updateOne({firstName: userToUpdate},req.body, (err, result) => {
+        if (err) return console.log(err)
+        console.log('Update your changes')
+        res.send( (err === null) ? {msg: ''} : {msg: err}
+    );
+      })
+  })
+  //this method actualize all the objects that match with the name in the collection
+  app.put('/updateAllInfo/:firstName', (req, res) => {
+    var usersToUpdate = req.params.firstName
+    var newvalues = {$set: {firstName: req.body.firstName} };
+    db.collection('providers').updateMany({firstName: usersToUpdate},newvalues, (err, result) => {
         if (err) return console.log(err)
         console.log('Update your changes')
         res.send( (err === null) ? {msg: ''} : {msg: err}
