@@ -10,3 +10,5 @@ app.listen(3000, function() {     //The application is going to be listen in the
 });
 app.use(bodyParser.json());
 app.use('/', routes); 
+
+module.exports = app

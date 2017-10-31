@@ -1,6 +1,7 @@
-var express = require('express');
+//Here are going to be all the routes for the url
+var  express = require('express');
 var router = express.Router();
-var database = require('./querys'); 
+var database = require('./app/app.js'); 
 
 router.get('/list', database.getProviders);  	//Route that show us all the providers 
 router.get('/list/:firstName', database.getProvidersByName);     //Route that show us the providers with the name send in the parameter

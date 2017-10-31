@@ -4,18 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "test": "mocha test",
+    "dev": "nodemon server.js"
   },
   "author": "Sergio Llanos",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "mocha": "^4.0.1",
     "mongodb": "^2.2.33",
-    "mongoose": "^4.12.4"
+    "mongoose": "^4.12.4",
+    "should": "^13.1.3",
+    "supertest": "^3.0.0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "nodemon": "^1.12.1"
   }
 }
