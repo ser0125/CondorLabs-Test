@@ -31,7 +31,6 @@ npm run test
     ```
  http://localhost:3000/list
    ```
-   
   And here is the rest
     ```
  http://localhost:3000/list/Sergio
