@@ -34,9 +34,14 @@ npm run test
   And here is the rest
     
  http://localhost:3000/list/Sergio
+ 
  http://localhost:3000/saveInfo    ---To save you just need a name {firstName: Sergio}
+ 
  http://localhost:3000/UpdateInfo/Sergio  ---To update is the same you just need a name {firstName: Sergio}
+ 
  http://localhost:3000/updateAllInfo/Sergio
+ 
  http://localhost:3000/deleteInfo/Sergio
+ 
  http://localhost:3000/deleteAllInfo/Sergio
    
